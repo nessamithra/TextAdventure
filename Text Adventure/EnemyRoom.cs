@@ -2,7 +2,8 @@
 
 public class EnemyRoom : Room
 {
-    private int hp;
+    public int HP { get; set; }
+    public int MaxHP { get; set; }
     private int attack;
 
     public EnemyRoom()
@@ -18,8 +19,9 @@ public class EnemyRoom : Room
             "Run Away",
             "Try to escape"
         };
-        hp = this.r.Next(20);
-        attack = this.r.Next(5);
+        MaxHP = this.r.Next(20);
+        HP = MaxHP;
+        attack = this.r.Next(1, 5);
     }
     
     /*
