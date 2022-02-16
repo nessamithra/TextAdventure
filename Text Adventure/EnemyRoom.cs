@@ -4,10 +4,6 @@ public class EnemyRoom : Room
 {
     private int hp;
     private int attack;
-    public override string[] GetTexts()
-    {
-        throw new System.NotImplementedException();
-    }
 
     public EnemyRoom()
     {

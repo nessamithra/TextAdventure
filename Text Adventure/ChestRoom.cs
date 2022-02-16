@@ -2,18 +2,39 @@
 
 public class ChestRoom : Room
 {
-    public override string[] GetTexts()
+    public ChestRoom()
     {
-        throw new System.NotImplementedException();
+        this.choicepro = new string[]
+        {
+            "Open chest",
+            "Give in to your greed"
+        };
+        this.choiceContra = new string[]
+        {
+            "Leave chest",
+            "Run away from chest"
+        };
     }
 
     public override bool DoIt()
     {
-        throw new System.NotImplementedException();
+        switch(r.Next(3))
+        {
+            case 1:
+                Form1.character.Gold += 1;
+                return true;
+            case 2:
+                Form1.character.HP -= 1;
+                return true;
+            default:
+                return true;
+        }
     }
+    
+    
 
     public override bool DoNot()
     {
-        throw new System.NotImplementedException();
+        return true;
     }
 }
