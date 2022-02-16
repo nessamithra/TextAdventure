@@ -22,6 +22,7 @@ public class ChestRoom : Room
     {
         switch (r.Next(3))
         {
+            case 0:
             case 1:
                 Form1.character.Gold += 1;
                 break;

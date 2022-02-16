@@ -50,6 +50,7 @@
         <Compile Include="Character.cs" />
         <Compile Include="ChestRoom.cs" />
         <Compile Include="EnemyRoom.cs" />
+        <Compile Include="PlayerIsDeadException.cs" />
         <Compile Include="Room.cs" />
         <Compile Include="Roomhandler.cs" />
         <Compile Include="Form1.cs">

@@ -25,7 +25,6 @@ namespace Text_Adventure
             character = new Character();
             roomhandler = new Roomhandler();
             setText();
-            setPictures();
         }
 
         private void west_door_Click(object sender, EventArgs e)
@@ -67,20 +66,34 @@ namespace Text_Adventure
 
         private void donot_button_Click(object sender, EventArgs e)
         {
-            if (r.DoNot())
+            try
             {
-                finishEvent();
+                if (r.DoNot())
+                {
+                    finishEvent();
+                }
+                setText();
             }
-            setText();
+            catch (PlayerIsDeadException exeption)
+            {
+                Gameover();
+            }
         }
 
         private void doit_button_Click(object sender, EventArgs e)
         {
-            if (r.DoIt())
+            try
             {
-                finishEvent();
+                if (r.DoIt())
+                {
+                    finishEvent();
+                }
+                setText();
             }
-            setText();
+            catch (PlayerIsDeadException exception)
+            {
+                Gameover();
+            }
         }
 
         private void finishEvent()
@@ -136,6 +149,29 @@ namespace Text_Adventure
             {
                 pictureBox.Image = null;
             }
+        }
+
+        private void Gameover()
+        {
+            r = null;
+            setText();
+            setPictures();
+            donot_button.Enabled = false;
+            doit_button.Enabled = false;
+            doit_button.Visible = false;
+            donot_button.Visible = false;
+            story2.Text = "You died. Game over. You can try again.";
+            retry.Visible = true;
+        }
+
+        private void retry_Click(object sender, EventArgs e)
+        {
+            character = new Character();
+            setText();
+            east_door.Enabled = true;
+            north_door.Enabled = true;
+            west_door.Enabled = true;
+            retry.Visible = false;
         }
     }
 }

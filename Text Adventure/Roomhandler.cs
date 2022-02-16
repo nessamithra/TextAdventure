@@ -26,7 +26,7 @@ namespace Text_Adventure
                 case (int)RoomNames.ENEMY:
                     return new EnemyRoom();
                 default:
-                    throw new Exception("Could not gernerate room");
+                    throw new Exception("Could not generate room");
             }
         }
     }

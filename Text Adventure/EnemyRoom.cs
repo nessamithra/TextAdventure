@@ -33,6 +33,11 @@ public class EnemyRoom : Room
         if (HP > 0)
         {
             Form1.character.HP -= attack;
+            if (Form1.character.HP <= 0)
+            {
+                Form1.character.HP = 0;
+                throw new PlayerIsDeadException("Player is dead.");
+            }
         }
         return HP <= 0;
     }
