@@ -31,11 +31,11 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.doit_button = new System.Windows.Forms.Button();
+            this.donot_button = new System.Windows.Forms.Button();
             this.east_door = new System.Windows.Forms.Button();
             this.north_door = new System.Windows.Forms.Button();
             this.west_door = new System.Windows.Forms.Button();
-            this.donot_button = new System.Windows.Forms.Button();
-            this.doit_button = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,6 +58,30 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(670, 426);
             this.panel1.TabIndex = 1;
+            // 
+            // doit_button
+            // 
+            this.doit_button.Enabled = false;
+            this.doit_button.Location = new System.Drawing.Point(407, 366);
+            this.doit_button.Name = "doit_button";
+            this.doit_button.Size = new System.Drawing.Size(67, 57);
+            this.doit_button.TabIndex = 5;
+            this.doit_button.Text = "button2";
+            this.doit_button.UseVisualStyleBackColor = true;
+            this.doit_button.Visible = false;
+            this.doit_button.Click += new System.EventHandler(this.doit_button_Click);
+            // 
+            // donot_button
+            // 
+            this.donot_button.Enabled = false;
+            this.donot_button.Location = new System.Drawing.Point(172, 366);
+            this.donot_button.Name = "donot_button";
+            this.donot_button.Size = new System.Drawing.Size(75, 57);
+            this.donot_button.TabIndex = 4;
+            this.donot_button.Text = "button1";
+            this.donot_button.UseVisualStyleBackColor = true;
+            this.donot_button.Visible = false;
+            this.donot_button.Click += new System.EventHandler(this.donot_button_Click);
             // 
             // east_door
             // 
@@ -88,24 +112,6 @@
             this.west_door.Text = "Westen";
             this.west_door.UseVisualStyleBackColor = true;
             this.west_door.Click += new System.EventHandler(this.west_door_Click);
-            // 
-            // donot_button
-            // 
-            this.donot_button.Location = new System.Drawing.Point(172, 366);
-            this.donot_button.Name = "donot_button";
-            this.donot_button.Size = new System.Drawing.Size(75, 57);
-            this.donot_button.TabIndex = 4;
-            this.donot_button.Text = "button1";
-            this.donot_button.UseVisualStyleBackColor = true;
-            // 
-            // doit_button
-            // 
-            this.doit_button.Location = new System.Drawing.Point(407, 366);
-            this.doit_button.Name = "doit_button";
-            this.doit_button.Size = new System.Drawing.Size(67, 57);
-            this.doit_button.TabIndex = 5;
-            this.doit_button.Text = "button2";
-            this.doit_button.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
