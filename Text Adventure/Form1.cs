@@ -18,10 +18,13 @@ namespace Text_Adventure
         Bitmap pictureChest = new Bitmap("./../../resource/Chest.png");
         Bitmap pictureOpenChest = new Bitmap("./../../resource/openChest.png");
         Bitmap pictureSlime = new Bitmap("./../../resource/Slime.png");
+        Bitmap pictureDungeon = new Bitmap("./../../resource/Dungeon.png");
 
         public Form1()
         {
             InitializeComponent();
+            background.SendToBack();
+            background.Image = pictureDungeon;
             character = new Character();
             roomhandler = new Roomhandler();
             setText();
@@ -173,5 +176,7 @@ namespace Text_Adventure
             west_door.Enabled = true;
             retry.Visible = false;
         }
+
+        
     }
 }

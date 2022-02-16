@@ -88,6 +88,7 @@
     </ItemGroup>
     <ItemGroup>
       <Content Include="resource\Chest.png" />
+      <Content Include="resource\Dungeon.png" />
       <Content Include="resource\openChest.png" />
       <Content Include="resource\Slime.png" />
     </ItemGroup>
