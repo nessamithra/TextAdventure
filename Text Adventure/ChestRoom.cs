@@ -18,6 +18,7 @@ public class ChestRoom : Room
 
     public override bool DoIt()
     {
+        
         return true;
     }
 
