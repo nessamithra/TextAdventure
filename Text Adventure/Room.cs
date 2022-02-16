@@ -9,7 +9,10 @@ public abstract class Room
 
     protected Random r = new Random();
 
-    public abstract string[] GetTexts();
+    public string[] GetTexts()
+    {
+        return new string[] {choicepro[r.Next(choicepro.Length)], choiceContra[r.Next(choiceContra.Length)]};
+    }
     public abstract bool DoIt();
     public abstract bool DoNot();
 }
