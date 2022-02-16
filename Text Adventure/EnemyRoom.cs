@@ -29,12 +29,12 @@ public class EnemyRoom : Room
      */
     public override bool DoIt()
     {
-        hp -= Form1.character.Attack;
-        if (hp > 0)
+        HP = (HP - Form1.character.Attack < 0) ? 0 : (HP - Form1.character.Attack);
+        if (HP > 0)
         {
             Form1.character.HP -= attack;
         }
-        return hp <= 0;
+        return HP <= 0;
     }
 
     /*
