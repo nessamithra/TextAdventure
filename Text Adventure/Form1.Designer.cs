@@ -34,6 +34,8 @@
             this.east_door = new System.Windows.Forms.Button();
             this.north_door = new System.Windows.Forms.Button();
             this.west_door = new System.Windows.Forms.Button();
+            this.donot_button = new System.Windows.Forms.Button();
+            this.doit_button = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -47,6 +49,8 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.doit_button);
+            this.panel1.Controls.Add(this.donot_button);
             this.panel1.Controls.Add(this.east_door);
             this.panel1.Controls.Add(this.north_door);
             this.panel1.Controls.Add(this.west_door);
@@ -67,9 +71,9 @@
             // 
             // north_door
             // 
-            this.north_door.Location = new System.Drawing.Point(279, 3);
+            this.north_door.Location = new System.Drawing.Point(260, 3);
             this.north_door.Name = "north_door";
-            this.north_door.Size = new System.Drawing.Size(102, 135);
+            this.north_door.Size = new System.Drawing.Size(162, 85);
             this.north_door.TabIndex = 2;
             this.north_door.Text = "Norden";
             this.north_door.UseVisualStyleBackColor = true;
@@ -85,6 +89,24 @@
             this.west_door.UseVisualStyleBackColor = true;
             this.west_door.Click += new System.EventHandler(this.west_door_Click);
             // 
+            // donot_button
+            // 
+            this.donot_button.Location = new System.Drawing.Point(172, 366);
+            this.donot_button.Name = "donot_button";
+            this.donot_button.Size = new System.Drawing.Size(75, 57);
+            this.donot_button.TabIndex = 4;
+            this.donot_button.Text = "button1";
+            this.donot_button.UseVisualStyleBackColor = true;
+            // 
+            // doit_button
+            // 
+            this.doit_button.Location = new System.Drawing.Point(407, 366);
+            this.doit_button.Name = "doit_button";
+            this.doit_button.Size = new System.Drawing.Size(67, 57);
+            this.doit_button.TabIndex = 5;
+            this.doit_button.Text = "button2";
+            this.doit_button.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -97,6 +119,9 @@
             this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Button donot_button;
+        private System.Windows.Forms.Button doit_button;
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button west_door;
