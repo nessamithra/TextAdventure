@@ -16,6 +16,7 @@ namespace Text_Adventure
         public Roomhandler roomhandler;
         public Room r = null;
         Bitmap pictureChest = new Bitmap("./../../resource/Chest.png");
+        Bitmap pictureOpenChest = new Bitmap("./../../resource/openChest.png");
         Bitmap pictureSlime = new Bitmap("./../../resource/Slime.png");
 
         public Form1()
@@ -89,7 +90,7 @@ namespace Text_Adventure
             doit_button.Visible = false;
             donot_button.Visible = false;
 
-            r = null;
+            r = (r.GetType()==typeof(EnemyRoom) ? null : r);
             setPictures();
             east_door.Enabled = true;
             north_door.Enabled = true;
@@ -120,8 +121,16 @@ namespace Text_Adventure
             }
             else if (r != null && r.GetType() == typeof(ChestRoom))
             {
-                pictureBox.Image = pictureChest;
-                story2.Text = "You've found a chest!";
+                if ((r as ChestRoom).Open)
+                {
+                    pictureBox.Image = pictureOpenChest;
+                    r = null;
+                }
+                else
+                {
+                    pictureBox.Image = pictureChest;
+                    story2.Text = "You've found a chest!";
+                }
             }
             else
             {

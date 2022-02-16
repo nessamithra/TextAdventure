@@ -2,6 +2,8 @@
 
 public class ChestRoom : Room
 {
+    public bool Open { get; set; }
+
     public ChestRoom()
     {
         this.choicepro = new string[]
@@ -18,20 +20,20 @@ public class ChestRoom : Room
 
     public override bool DoIt()
     {
-        switch(r.Next(3))
+        switch (r.Next(3))
         {
             case 1:
                 Form1.character.Gold += 1;
-                return true;
+                break;
             case 2:
                 Form1.character.HP -= 1;
-                return true;
+                break;
             default:
-                return true;
+                break;
         }
+        Open = true;
+        return true;
     }
-    
-    
 
     public override bool DoNot()
     {
