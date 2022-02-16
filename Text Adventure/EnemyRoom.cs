@@ -2,12 +2,12 @@
 
 public class EnemyRoom : Room
 {
-    public override void DoIt()
+    public override bool DoIt()
     {
         throw new System.NotImplementedException();
     }
 
-    public override void DoNot()
+    public override bool DoNot()
     {
         throw new System.NotImplementedException();
     }
