@@ -29,16 +29,19 @@ namespace Text_Adventure
 
         private void west_door_Click(object sender, EventArgs e)
         {
+            story1.Text = "You are going west.";
             GoThroughDoor();
         }
 
         private void north_door_Click(object sender, EventArgs e)
         {
+            story1.Text = "You are going north.";
             GoThroughDoor();
         }
 
         private void east_door_Click(object sender, EventArgs e)
         {
+            story1.Text = "You are going east.";
             GoThroughDoor();
         }
 
@@ -113,10 +116,12 @@ namespace Text_Adventure
             if (r != null && r.GetType() == typeof(EnemyRoom))
             {
                 pictureBox.Image = pictureSlime;
+                story2.Text = "A slime appears!";
             }
             else if (r != null && r.GetType() == typeof(ChestRoom))
             {
                 pictureBox.Image = pictureChest;
+                story2.Text = "You've found a chest!";
             }
             else
             {
