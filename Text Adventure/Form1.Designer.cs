@@ -100,7 +100,7 @@
             // 
             // west_door
             // 
-            this.west_door.Location = new System.Drawing.Point(12, 181);
+            this.west_door.Location = new System.Drawing.Point(20, 159);
             this.west_door.Name = "west_door";
             this.west_door.Size = new System.Drawing.Size(102, 135);
             this.west_door.TabIndex = 1;
@@ -120,7 +120,7 @@
             // 
             // east_door
             // 
-            this.east_door.Location = new System.Drawing.Point(686, 181);
+            this.east_door.Location = new System.Drawing.Point(676, 159);
             this.east_door.Name = "east_door";
             this.east_door.Size = new System.Drawing.Size(102, 135);
             this.east_door.TabIndex = 3;
@@ -131,7 +131,7 @@
             // donot_button
             // 
             this.donot_button.Enabled = false;
-            this.donot_button.Location = new System.Drawing.Point(130, 380);
+            this.donot_button.Location = new System.Drawing.Point(20, 381);
             this.donot_button.Name = "donot_button";
             this.donot_button.Size = new System.Drawing.Size(154, 57);
             this.donot_button.TabIndex = 4;
@@ -143,7 +143,7 @@
             // doit_button
             // 
             this.doit_button.Enabled = false;
-            this.doit_button.Location = new System.Drawing.Point(525, 380);
+            this.doit_button.Location = new System.Drawing.Point(624, 381);
             this.doit_button.Name = "doit_button";
             this.doit_button.Size = new System.Drawing.Size(154, 57);
             this.doit_button.TabIndex = 5;
@@ -173,7 +173,7 @@
             // 
             // retry
             // 
-            this.retry.Location = new System.Drawing.Point(347, 379);
+            this.retry.Location = new System.Drawing.Point(339, 380);
             this.retry.Name = "retry";
             this.retry.Size = new System.Drawing.Size(108, 58);
             this.retry.TabIndex = 8;

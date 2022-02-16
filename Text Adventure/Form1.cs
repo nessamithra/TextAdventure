@@ -106,7 +106,7 @@ namespace Text_Adventure
             doit_button.Visible = false;
             donot_button.Visible = false;
 
-            r = (r.GetType()==typeof(EnemyRoom) ? null : r);
+            r = ((r.GetType()== typeof(EnemyRoom) || r.GetType()== typeof(ChestRoom)) ? null : r);
             setPictures();
             east_door.Enabled = true;
             north_door.Enabled = true;
