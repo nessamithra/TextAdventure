@@ -16,5 +16,25 @@ namespace Text_Adventure
         {
             InitializeComponent();
         }
+
+        private void west_door_Click(object sender, EventArgs e)
+        {
+            GoThroughDoor();
+        }
+
+        private void north_door_Click(object sender, EventArgs e)
+        {
+            GoThroughDoor();
+        }
+
+        private void east_door_Click(object sender, EventArgs e)
+        {
+            GoThroughDoor();
+        }
+
+        private static void GoThroughDoor()
+        {
+            
+        }
     }
 }
