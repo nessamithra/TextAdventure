@@ -18,9 +18,20 @@ public class ChestRoom : Room
 
     public override bool DoIt()
     {
-        
-        return true;
+        switch(r.Next(3))
+        {
+            case 1:
+                Form1.character.Gold += 1;
+                return true;
+            case 2:
+                Form1.character.HP -= 1;
+                return true;
+            default:
+                return true;
+        }
     }
+    
+    
 
     public override bool DoNot()
     {

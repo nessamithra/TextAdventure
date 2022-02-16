@@ -4,9 +4,9 @@ namespace Text_Adventure;
 
 public class Character
 {
-    private int Gold { get; set; }
-    private int HP { get; set; }
-    private int Attack { get; set; }
+    public int Gold { get; set; }
+    public int HP { get; set; }
+    public int Attack { get; set; }
     
     public Character()
     {
