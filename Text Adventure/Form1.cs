@@ -12,8 +12,11 @@ namespace Text_Adventure
 {
     public partial class Form1 : Form
     {
+        public Character character;
+        
         public Form1()
         {
+            character = new Character();
             InitializeComponent();
         }
 
