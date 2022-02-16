@@ -16,9 +16,18 @@ namespace Text_Adventure
             r = new Random();
         }
 
-        public void getRoom()
+        public Room getRoom()
         {
-            
+            int roomnr = r.Next(Enum.GetNames(typeof(RoomNames)).Length);
+            switch (roomnr)
+            {
+                case (int)RoomNames.CHEST:
+                    return new ChestRoom();
+                case (int)RoomNames.ENEMY:
+                    return new EnemyRoom();
+                default:
+                    throw new Exception("Could not gernerate room");
+            }
         }
     }
 }
