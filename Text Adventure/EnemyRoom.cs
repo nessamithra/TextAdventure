@@ -9,14 +9,14 @@ public class EnemyRoom : Room
     {
         this.choicepro = new[]
         {
-            "Run Away",
-            "Try to escape"
-        };
-        this.choiceContra = new[]
-        {
             "Attack!",
             "Fight!",
             "Try to kill",
+        };
+        this.choiceContra = new[]
+        {
+            "Run Away",
+            "Try to escape"
         };
         hp = this.r.Next(20);
         attack = this.r.Next(5);
