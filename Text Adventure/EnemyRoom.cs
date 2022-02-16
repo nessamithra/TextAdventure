@@ -27,8 +27,10 @@ public class EnemyRoom : Room
     /*
      * Fight the Enemy!
      */
-    public override bool DoIt()
+    public override string[] DoIt()
     {
+        string[] story = new string[2];
+        story[0] = "You attack the slime!";
         HP = (HP - Form1.character.Attack < 0) ? 0 : (HP - Form1.character.Attack);
         if (HP > 0)
         {
@@ -38,15 +40,21 @@ public class EnemyRoom : Room
                 Form1.character.HP = 0;
                 throw new PlayerIsDeadException("Player is dead.");
             }
+            story[1] = "Oh no! The slime hit you";
         }
-        return HP <= 0;
+        else
+        {
+            story[1] = "You killed the slime";
+        }
+        
+        return story;
     }
 
     /*
      * Run away and leave room
      */
-    public override bool DoNot()
+    public override string DoNot()
     {
-        return true;
+        return "You are running away";
     }
 }

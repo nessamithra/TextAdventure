@@ -71,11 +71,10 @@ namespace Text_Adventure
         {
             try
             {
-                if (r.DoNot())
-                {
-                    finishEvent();
-                }
-                setText();
+                string story = r.DoNot();
+                story1.Text = story2.Text;
+                story2.Text = story;
+                finishEvent();
             }
             catch (PlayerIsDeadException exeption)
             {
@@ -87,7 +86,10 @@ namespace Text_Adventure
         {
             try
             {
-                if (r.DoIt())
+                string[] story = r.DoIt();
+                story1.Text = story[0];
+                story2.Text = story[1];
+                if (story[1].Contains("killed") || r.GetType().Equals(typeof(ChestRoom)))
                 {
                     finishEvent();
                 }
@@ -106,7 +108,19 @@ namespace Text_Adventure
             doit_button.Visible = false;
             donot_button.Visible = false;
 
-            r = ((r.GetType()== typeof(EnemyRoom) || r.GetType()== typeof(ChestRoom)) ? null : r);
+            // See if chest got opened. If it doesn't set r to null
+            if (r.GetType().Equals(typeof(ChestRoom)))
+            {
+                if (!(r as ChestRoom).Open)
+                {
+                    r = null;
+                }
+            }
+            else
+            {
+                r = null;
+            }
+
             setPictures();
             east_door.Enabled = true;
             north_door.Enabled = true;

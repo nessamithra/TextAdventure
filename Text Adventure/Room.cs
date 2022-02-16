@@ -13,6 +13,6 @@ public abstract class Room
     {
         return new string[] {choicepro[r.Next(choicepro.Length)], choiceContra[r.Next(choiceContra.Length)]};
     }
-    public abstract bool DoIt();
-    public abstract bool DoNot();
+    public abstract string[] DoIt();
+    public abstract string DoNot();
 }

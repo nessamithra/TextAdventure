@@ -18,26 +18,31 @@ public class ChestRoom : Room
         };
     }
 
-    public override bool DoIt()
+    public override string[] DoIt()
     {
+        string[] story = new string[2];
+        story[0] = "You open the chest";
         switch (r.Next(3))
         {
             case 0:
             case 1:
                 Form1.character.Gold += 1;
+                story[1] = "You found one Gold";
                 break;
             case 2:
                 Form1.character.HP -= 1;
+                // Todo: Add different storys 
+                story[1] = "You lost one life";
                 break;
             default:
                 break;
         }
         Open = true;
-        return true;
+        return story;
     }
 
-    public override bool DoNot()
+    public override string DoNot()
     {
-        return true;
+        return "You feel something bad about this chest and leave it";
     }
 }
