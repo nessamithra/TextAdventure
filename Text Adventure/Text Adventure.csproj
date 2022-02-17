@@ -88,6 +88,11 @@
     </ItemGroup>
     <ItemGroup>
       <Content Include="Resources\Dungeon.png" />
+      <Content Include="Resources\DungeonDoor14.png" />
+      <Content Include="Resources\DungeonDoor15.png" />
+      <Content Include="Resources\DungeonDoor5.png" />
+      <Content Include="Resources\DungeonDoor6.png" />
+      <Content Include="Resources\DungeonDoor7.png" />
       <Content Include="resource\Chest.png" />
       <Content Include="resource\Dungeon.png" />
       <Content Include="resource\openChest.png" />

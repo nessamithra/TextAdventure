@@ -100,9 +100,10 @@
             // 
             // west_door
             // 
+            this.west_door.BackgroundImage = global::Text_Adventure.Properties.Resources.DungeonDoor14;
             this.west_door.Location = new System.Drawing.Point(57, 101);
             this.west_door.Name = "west_door";
-            this.west_door.Size = new System.Drawing.Size(145, 214);
+            this.west_door.Size = new System.Drawing.Size(145, 215);
             this.west_door.TabIndex = 1;
             this.west_door.Text = "West";
             this.west_door.UseVisualStyleBackColor = true;
@@ -110,9 +111,10 @@
             // 
             // north_door
             // 
-            this.north_door.Location = new System.Drawing.Point(378, 143);
+            this.north_door.BackgroundImage = global::Text_Adventure.Properties.Resources.DungeonDoor6;
+            this.north_door.Location = new System.Drawing.Point(373, 118);
             this.north_door.Name = "north_door";
-            this.north_door.Size = new System.Drawing.Size(67, 85);
+            this.north_door.Size = new System.Drawing.Size(75, 100);
             this.north_door.TabIndex = 2;
             this.north_door.Text = "North";
             this.north_door.UseVisualStyleBackColor = true;
@@ -120,9 +122,10 @@
             // 
             // east_door
             // 
-            this.east_door.Location = new System.Drawing.Point(603, 101);
+            this.east_door.BackgroundImage = global::Text_Adventure.Properties.Resources.DungeonDoor14;
+            this.east_door.Location = new System.Drawing.Point(600, 78);
             this.east_door.Name = "east_door";
-            this.east_door.Size = new System.Drawing.Size(142, 193);
+            this.east_door.Size = new System.Drawing.Size(145, 215);
             this.east_door.TabIndex = 3;
             this.east_door.Text = "East";
             this.east_door.UseVisualStyleBackColor = true;
@@ -185,7 +188,7 @@
             // background
             // 
             this.background.Image = global::Text_Adventure.Properties.Resources.Dungeon;
-            this.background.Location = new System.Drawing.Point(9, 55);
+            this.background.Location = new System.Drawing.Point(-1, 215);
             this.background.Name = "background";
             this.background.Size = new System.Drawing.Size(779, 385);
             this.background.TabIndex = 9;
