@@ -188,7 +188,7 @@
             // background
             // 
             this.background.Image = global::Text_Adventure.Properties.Resources.Dungeon;
-            this.background.Location = new System.Drawing.Point(-1, 215);
+            this.background.Location = new System.Drawing.Point(9, 55);
             this.background.Name = "background";
             this.background.Size = new System.Drawing.Size(779, 385);
             this.background.TabIndex = 9;
