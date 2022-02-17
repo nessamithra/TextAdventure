@@ -207,6 +207,9 @@ namespace Text_Adventure
             east_door.Enabled = true;
             north_door.Enabled = true;
             west_door.Enabled = true;
+            east_door.Visible = true;
+            north_door.Visible = true;
+            west_door.Visible = true;
             retry.Visible = false;
         }
     }
