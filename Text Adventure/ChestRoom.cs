@@ -22,7 +22,7 @@ public class ChestRoom : Room
     {
         string[] story = new string[2];
         story[0] = "You open the chest";
-        switch (r.Next(3))
+        switch (r.Next(4))
         {
             case 0:
             case 1:
@@ -33,6 +33,11 @@ public class ChestRoom : Room
                 Form1.character.HP -= 1;
                 // Todo: Add different storys 
                 story[1] = "You lost one life";
+                break;
+            case 3:
+                Form1.character.HP += 1;
+                // Todo: Add different storys 
+                story[1] = "You gain one life";
                 break;
             default:
                 break;
