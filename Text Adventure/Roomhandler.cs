@@ -18,7 +18,12 @@ namespace Text_Adventure
 
         public Room getRoom()
         {
-            int roomnr = r.Next(Enum.GetNames(typeof(RoomNames)).Length);
+            int temp = r.Next(100);
+            int roomnr = 0;
+            if (temp <75)
+            {
+                roomnr = 1;
+            }
             switch (roomnr)
             {
                 case (int)RoomNames.CHEST:
