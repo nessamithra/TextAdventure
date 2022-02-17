@@ -130,10 +130,6 @@ namespace Text_Adventure
                     r = null;
                     pictureBox.Visible = false;
                 }
-                else
-                {
-                    north_door.Visible = false;
-                }
             }
             else
             {
