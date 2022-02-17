@@ -8,6 +8,10 @@ public class Character
     public int HP { get; set; }
     public int MaxHp { get; set; }
     public int Attack { get; set; }
+    
+    public int Level { get; set; }
+    
+    public int Xp { get; set; }
 
     public Character()
     {
@@ -15,5 +19,7 @@ public class Character
         MaxHp = 20;
         HP = MaxHp;
         Attack = 3;
+        Level = 1;
+        Xp = 0;
     }
 }
