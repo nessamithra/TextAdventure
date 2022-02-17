@@ -12,7 +12,10 @@ public class Character
         get { return this.hp;}
         set
         {
-            this.hp = value;
+            if (value<MaxHp)
+            {
+                this.hp = value;
+            }
             if (this.hp <= 0)
             {
                 this.hp = 0;
