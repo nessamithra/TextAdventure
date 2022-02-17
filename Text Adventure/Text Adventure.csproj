@@ -101,6 +101,7 @@
       <Content Include="resource\Dungeon.png" />
       <Content Include="resource\openChest.png" />
       <Content Include="resource\Slime.png" />
+      <Content Include="resource\Witch.png" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -98,7 +98,8 @@ namespace Text_Adventure
                 string[] story = r.DoIt();
                 story1.Text = story[0];
                 story2.Text = story[1];
-                if (story[1].Contains("killed") || r.GetType().Equals(typeof(ChestRoom)))
+                if (story[1].Contains("killed") || r.GetType().Equals(typeof(ChestRoom)) 
+                                                || r.GetType().Equals(typeof(WitchRoom)))
                 {
                     finishEvent();
                 }

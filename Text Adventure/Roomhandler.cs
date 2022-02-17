@@ -8,7 +8,8 @@ namespace Text_Adventure
         public enum RoomNames
         {
             CHEST,
-            ENEMY
+            ENEMY,
+            WITCH
         }
 
         public Roomhandler()
@@ -20,9 +21,14 @@ namespace Text_Adventure
         {
             int temp = r.Next(100);
             int roomnr = 0;
-            if (temp <75)
+            if (temp < 75)
             {
                 roomnr = 1;
+            }
+
+            if (temp > 80)
+            {
+                roomnr = 2;
             }
             switch (roomnr)
             {
@@ -30,6 +36,8 @@ namespace Text_Adventure
                     return new ChestRoom();
                 case (int)RoomNames.ENEMY:
                     return new EnemyRoom();
+                case (int)RoomNames.WITCH:
+                    return new WitchRoom();
                 default:
                     throw new Exception("Could not generate room");
             }
