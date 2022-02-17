@@ -100,31 +100,31 @@
             // 
             // west_door
             // 
-            this.west_door.Location = new System.Drawing.Point(20, 159);
+            this.west_door.Location = new System.Drawing.Point(57, 101);
             this.west_door.Name = "west_door";
-            this.west_door.Size = new System.Drawing.Size(102, 135);
+            this.west_door.Size = new System.Drawing.Size(145, 214);
             this.west_door.TabIndex = 1;
-            this.west_door.Text = "Westen";
+            this.west_door.Text = "West";
             this.west_door.UseVisualStyleBackColor = true;
             this.west_door.Click += new System.EventHandler(this.west_door_Click);
             // 
             // north_door
             // 
-            this.north_door.Location = new System.Drawing.Point(310, 71);
+            this.north_door.Location = new System.Drawing.Point(376, 126);
             this.north_door.Name = "north_door";
-            this.north_door.Size = new System.Drawing.Size(162, 85);
+            this.north_door.Size = new System.Drawing.Size(67, 85);
             this.north_door.TabIndex = 2;
-            this.north_door.Text = "Norden";
+            this.north_door.Text = "North";
             this.north_door.UseVisualStyleBackColor = true;
             this.north_door.Click += new System.EventHandler(this.north_door_Click);
             // 
             // east_door
             // 
-            this.east_door.Location = new System.Drawing.Point(676, 159);
+            this.east_door.Location = new System.Drawing.Point(603, 101);
             this.east_door.Name = "east_door";
-            this.east_door.Size = new System.Drawing.Size(102, 135);
+            this.east_door.Size = new System.Drawing.Size(142, 193);
             this.east_door.TabIndex = 3;
-            this.east_door.Text = "Osten";
+            this.east_door.Text = "East";
             this.east_door.UseVisualStyleBackColor = true;
             this.east_door.Click += new System.EventHandler(this.east_door_Click);
             // 
@@ -154,7 +154,7 @@
             // 
             // pictureBox
             // 
-            this.pictureBox.Location = new System.Drawing.Point(301, 180);
+            this.pictureBox.Location = new System.Drawing.Point(319, 180);
             this.pictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(180, 195);
@@ -163,7 +163,7 @@
             // 
             // enemy_hp_value
             // 
-            this.enemy_hp_value.Location = new System.Drawing.Point(301, 159);
+            this.enemy_hp_value.Location = new System.Drawing.Point(319, 159);
             this.enemy_hp_value.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.enemy_hp_value.Name = "enemy_hp_value";
             this.enemy_hp_value.Size = new System.Drawing.Size(180, 19);
@@ -173,7 +173,7 @@
             // 
             // retry
             // 
-            this.retry.Location = new System.Drawing.Point(339, 380);
+            this.retry.Location = new System.Drawing.Point(364, 380);
             this.retry.Name = "retry";
             this.retry.Size = new System.Drawing.Size(108, 58);
             this.retry.TabIndex = 8;
@@ -184,6 +184,7 @@
             // 
             // background
             // 
+            this.background.Image = global::Text_Adventure.Properties.Resources.Dungeon;
             this.background.Location = new System.Drawing.Point(9, 55);
             this.background.Name = "background";
             this.background.Size = new System.Drawing.Size(779, 385);

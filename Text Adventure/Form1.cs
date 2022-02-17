@@ -23,7 +23,10 @@ namespace Text_Adventure
         public Form1()
         {
             InitializeComponent();
+            north_door.SendToBack();
             background.SendToBack();
+            pictureBox.Visible = false;
+            enemy_hp_value.Visible = false;
             background.Image = pictureDungeon;
             character = new Character();
             roomhandler = new Roomhandler();
@@ -53,6 +56,10 @@ namespace Text_Adventure
             east_door.Enabled = false;
             north_door.Enabled = false;
             west_door.Enabled = false;
+            east_door.Visible = false;
+            north_door.Visible = false;
+            west_door.Visible = false;
+            pictureBox.Visible = true;
 
             r = roomhandler.getRoom();
             setPictures();
@@ -107,6 +114,12 @@ namespace Text_Adventure
             doit_button.Enabled = false;
             doit_button.Visible = false;
             donot_button.Visible = false;
+            east_door.Enabled = true;
+            north_door.Enabled = true;
+            west_door.Enabled = true;
+            east_door.Visible = true;
+            north_door.Visible = true;
+            west_door.Visible = true;
 
             // See if chest got opened. If it doesn't set r to null
             if (r.GetType().Equals(typeof(ChestRoom)))
@@ -114,6 +127,11 @@ namespace Text_Adventure
                 if (!(r as ChestRoom).Open)
                 {
                     r = null;
+                    pictureBox.Visible = false;
+                }
+                else
+                {
+                    north_door.Visible = false;
                 }
             }
             else
@@ -122,9 +140,6 @@ namespace Text_Adventure
             }
 
             setPictures();
-            east_door.Enabled = true;
-            north_door.Enabled = true;
-            west_door.Enabled = true;
             setText();
         }
 
@@ -135,10 +150,12 @@ namespace Text_Adventure
             if (r != null && r.GetType() == typeof(EnemyRoom))
             {
                 enemy_hp_value.Text = $"{(r as EnemyRoom).HP.ToString()}/{(r as EnemyRoom).MaxHP.ToString()}";
+                enemy_hp_value.Visible = true;
             }
             else
             {
                 enemy_hp_value.Text = "";
+                enemy_hp_value.Visible = false;
             }
         }
 
@@ -164,7 +181,7 @@ namespace Text_Adventure
             }
             else
             {
-                pictureBox.Image = null;
+                pictureBox.Visible = false;
             }
         }
 
@@ -190,7 +207,6 @@ namespace Text_Adventure
             west_door.Enabled = true;
             retry.Visible = false;
         }
-
         
     }
 }

@@ -87,6 +87,7 @@
         <None Include="App.config" />
     </ItemGroup>
     <ItemGroup>
+      <Content Include="Resources\Dungeon.png" />
       <Content Include="resource\Chest.png" />
       <Content Include="resource\Dungeon.png" />
       <Content Include="resource\openChest.png" />
