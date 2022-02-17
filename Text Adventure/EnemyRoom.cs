@@ -1,4 +1,6 @@
-﻿namespace Text_Adventure;
+﻿using System;
+
+namespace Text_Adventure;
 
 public class EnemyRoom : Room
 {
@@ -19,9 +21,11 @@ public class EnemyRoom : Room
             "Run Away",
             "Try to escape"
         };
-        MaxHP = this.r.Next(20);
+        int level = Form1.character.Level;
+        int upperBorder = Math.Max((Form1.character.Attack * 2), (Form1.character.Attack * level));
+        MaxHP = r.Next(Form1.character.Attack-1, upperBorder);
         HP = MaxHP;
-        attack = this.r.Next(1, 5);
+        attack = r.Next(level, level*2);
     }
     
     /*
@@ -29,22 +33,24 @@ public class EnemyRoom : Room
      */
     public override string[] DoIt()
     {
+        Character chara = Form1.character;
         string[] story = new string[2];
         story[0] = "You attack the slime!";
-        HP = (HP - Form1.character.Attack < 0) ? 0 : (HP - Form1.character.Attack);
+        HP = (HP - chara.Attack < 0) ? 0 : (HP - chara.Attack);
         if (HP > 0)
         {
-            Form1.character.HP -= attack;
-            if (Form1.character.HP <= 0)
+            chara.HP -= attack;
+            if (chara.HP <= 0)
             {
-                Form1.character.HP = 0;
+                chara.HP = 0;
                 throw new PlayerIsDeadException("Player is dead.");
             }
             story[1] = "Oh no! The slime hit you";
         }
         else
         {
-            story[1] = "You killed the slime";
+            story[1] = $"You killed the slime and got { MaxHP/2 } Xp";
+            chara.Xp = chara.Xp + MaxHP/2;
         }
         
         return story;

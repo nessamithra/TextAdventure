@@ -6,12 +6,12 @@ public class ChestRoom : Room
 
     public ChestRoom()
     {
-        this.choicepro = new string[]
+        choicepro = new string[]
         {
             "Open chest",
             "Give in to your greed"
         };
-        this.choiceContra = new string[]
+        choiceContra = new string[]
         {
             "Leave chest",
             "Run away from chest"
@@ -20,24 +20,25 @@ public class ChestRoom : Room
 
     public override string[] DoIt()
     {
+        Character chara = Form1.character;
         string[] story = new string[2];
         story[0] = "You open the chest";
         switch (r.Next(4))
         {
             case 0:
             case 1:
-                Form1.character.Gold += 1;
-                story[1] = "You found one Gold";
+                chara.Gold += chara.Level+2;
+                story[1] = $"You found {chara.Level+2} Gold";
                 break;
             case 2:
-                Form1.character.HP -= 1;
-                // Todo: Add different storys 
-                story[1] = "You lost one life";
+                chara.HP -= chara.Level;
+                // Todo: Add different story lines
+                story[1] = $"You lost {chara.Level} life";
                 break;
             case 3:
-                Form1.character.HP += 1;
-                // Todo: Add different storys 
-                story[1] = "You gain one life";
+                chara.HP += chara.Level;
+                // Todo: Add different story lines 
+                story[1] = $"You gain {chara.Level} life";
                 break;
             default:
                 break;
