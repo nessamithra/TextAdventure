@@ -100,40 +100,48 @@
             // 
             // west_door
             // 
-            this.west_door.Location = new System.Drawing.Point(57, 101);
+            this.west_door.BackgroundImage = global::Text_Adventure.Properties.Resources.DungeonDoor14;
+            this.west_door.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.west_door.Location = new System.Drawing.Point(63, 96);
+            this.west_door.Margin = new System.Windows.Forms.Padding(0);
             this.west_door.Name = "west_door";
-            this.west_door.Size = new System.Drawing.Size(145, 214);
+            this.west_door.Size = new System.Drawing.Size(141, 215);
             this.west_door.TabIndex = 1;
-            this.west_door.Text = "West";
             this.west_door.UseVisualStyleBackColor = true;
             this.west_door.Click += new System.EventHandler(this.west_door_Click);
             // 
             // north_door
             // 
-            this.north_door.Location = new System.Drawing.Point(376, 126);
+            this.north_door.BackgroundImage = global::Text_Adventure.Properties.Resources.DungeonDoor6;
+            this.north_door.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.north_door.Location = new System.Drawing.Point(373, 118);
+            this.north_door.Margin = new System.Windows.Forms.Padding(0);
             this.north_door.Name = "north_door";
-            this.north_door.Size = new System.Drawing.Size(67, 85);
+            this.north_door.Size = new System.Drawing.Size(75, 100);
             this.north_door.TabIndex = 2;
-            this.north_door.Text = "North";
             this.north_door.UseVisualStyleBackColor = true;
             this.north_door.Click += new System.EventHandler(this.north_door_Click);
             // 
             // east_door
             // 
-            this.east_door.Location = new System.Drawing.Point(603, 101);
+            this.east_door.BackgroundImage = global::Text_Adventure.Properties.Resources.DungeonDoor14;
+            this.east_door.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.east_door.Location = new System.Drawing.Point(603, 80);
+            this.east_door.Margin = new System.Windows.Forms.Padding(0);
             this.east_door.Name = "east_door";
-            this.east_door.Size = new System.Drawing.Size(142, 193);
+            this.east_door.Size = new System.Drawing.Size(142, 215);
             this.east_door.TabIndex = 3;
-            this.east_door.Text = "East";
             this.east_door.UseVisualStyleBackColor = true;
             this.east_door.Click += new System.EventHandler(this.east_door_Click);
             // 
             // donot_button
             // 
+            this.donot_button.BackgroundImage = global::Text_Adventure.Properties.Resources.Button15;
             this.donot_button.Enabled = false;
-            this.donot_button.Location = new System.Drawing.Point(20, 381);
+            this.donot_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.donot_button.Location = new System.Drawing.Point(20, 369);
             this.donot_button.Name = "donot_button";
-            this.donot_button.Size = new System.Drawing.Size(154, 57);
+            this.donot_button.Size = new System.Drawing.Size(150, 62);
             this.donot_button.TabIndex = 4;
             this.donot_button.Text = "button1";
             this.donot_button.UseVisualStyleBackColor = true;
@@ -142,10 +150,12 @@
             // 
             // doit_button
             // 
+            this.doit_button.BackgroundImage = global::Text_Adventure.Properties.Resources.Button15;
             this.doit_button.Enabled = false;
-            this.doit_button.Location = new System.Drawing.Point(624, 381);
+            this.doit_button.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.doit_button.Location = new System.Drawing.Point(624, 369);
             this.doit_button.Name = "doit_button";
-            this.doit_button.Size = new System.Drawing.Size(154, 57);
+            this.doit_button.Size = new System.Drawing.Size(150, 62);
             this.doit_button.TabIndex = 5;
             this.doit_button.Text = "button2";
             this.doit_button.UseVisualStyleBackColor = true;
@@ -163,7 +173,7 @@
             // 
             // enemy_hp_value
             // 
-            this.enemy_hp_value.Location = new System.Drawing.Point(319, 159);
+            this.enemy_hp_value.Location = new System.Drawing.Point(319, 211);
             this.enemy_hp_value.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.enemy_hp_value.Name = "enemy_hp_value";
             this.enemy_hp_value.Size = new System.Drawing.Size(180, 19);
@@ -173,9 +183,12 @@
             // 
             // retry
             // 
-            this.retry.Location = new System.Drawing.Point(364, 380);
+            this.retry.BackgroundImage = global::Text_Adventure.Properties.Resources.Button10;
+            this.retry.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.retry.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.retry.Location = new System.Drawing.Point(360, 389);
             this.retry.Name = "retry";
-            this.retry.Size = new System.Drawing.Size(108, 58);
+            this.retry.Size = new System.Drawing.Size(100, 42);
             this.retry.TabIndex = 8;
             this.retry.Text = "Retry";
             this.retry.UseVisualStyleBackColor = true;
@@ -195,6 +208,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.west_door);
             this.Controls.Add(this.east_door);
@@ -211,8 +225,8 @@
             this.Controls.Add(this.HP);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.north_door);
+            this.Location = new System.Drawing.Point(15, 15);
             this.Name = "Form1";
-            this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize) (this.pictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize) (this.background)).EndInit();
             this.ResumeLayout(false);

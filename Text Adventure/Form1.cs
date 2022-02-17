@@ -25,6 +25,7 @@ namespace Text_Adventure
             InitializeComponent();
             north_door.SendToBack();
             background.SendToBack();
+            background.Controls.Add(pictureBox);
             pictureBox.Visible = false;
             enemy_hp_value.Visible = false;
             background.Image = pictureDungeon;
@@ -183,6 +184,7 @@ namespace Text_Adventure
             {
                 pictureBox.Visible = false;
             }
+            pictureBox.BackColor = Color.Transparent;
         }
 
         private void Gameover()
@@ -207,6 +209,5 @@ namespace Text_Adventure
             west_door.Enabled = true;
             retry.Visible = false;
         }
-        
     }
 }
