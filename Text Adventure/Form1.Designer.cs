@@ -187,6 +187,7 @@
             // enemy_hp_value
             // 
             this.enemy_hp_value.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, ((System.Drawing.FontStyle) ((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte) (0)));
+            this.enemy_hp_value.Image = global::Text_Adventure.Properties.Resources.HP_Bar;
             this.enemy_hp_value.Location = new System.Drawing.Point(319, 211);
             this.enemy_hp_value.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.enemy_hp_value.Name = "enemy_hp_value";
