@@ -27,7 +27,6 @@ namespace Text_Adventure
             background.SendToBack();
             background.Controls.Add(pictureBox);
             pictureBox.Visible = false;
-            enemy_hp_value.Visible = false;
             background.Image = pictureDungeon;
             character = new Character();
             roomhandler = new Roomhandler();
@@ -149,13 +148,13 @@ namespace Text_Adventure
             xp_value.Text = $"{character.Xp.ToString()}/{(character.Level * 5).ToString()}";
             if (r != null && r.GetType() == typeof(EnemyRoom))
             {
-                enemy_hp_value.Text = $"{(r as EnemyRoom).HP.ToString()}/{(r as EnemyRoom).MaxHP.ToString()}";
-                enemy_hp_value.Visible = true;
+                textProgressBar1.Maximum = (r as EnemyRoom).MaxHP;
+                textProgressBar1.Value = (r as EnemyRoom).HP;
+                textProgressBar1.Visible = true;
             }
             else
             {
-                enemy_hp_value.Text = "";
-                enemy_hp_value.Visible = false;
+                textProgressBar1.Visible = false;
             }
         }
 
