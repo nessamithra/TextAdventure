@@ -16,6 +16,10 @@ public class Character
             {
                 this.hp = value;
             }
+            else
+            {
+                this.hp = MaxHp;
+            }
             if (this.hp <= 0)
             {
                 this.hp = 0;
