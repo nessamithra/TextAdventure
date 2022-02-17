@@ -5,7 +5,22 @@ namespace Text_Adventure;
 public class Character
 {
     public int Gold { get; set; }
-    public int HP { get; set; }
+
+    private int hp;
+    public int HP
+    {
+        get { return this.hp;}
+        set
+        {
+            this.hp = value;
+            if (this.hp <= 0)
+            {
+                this.hp = 0;
+                throw new PlayerIsDeadException("Player is dead.");
+            }
+        }
+    }
+
     public int MaxHp { get; set; }
     public int Attack { get; set; }
 

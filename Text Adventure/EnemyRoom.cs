@@ -39,11 +39,13 @@ public class EnemyRoom : Room
         HP = (HP - chara.Attack < 0) ? 0 : (HP - chara.Attack);
         if (HP > 0)
         {
-            chara.HP -= attack;
-            if (chara.HP <= 0)
+            try
             {
-                chara.HP = 0;
-                throw new PlayerIsDeadException("Player is dead.");
+                chara.HP -= attack;
+            }
+            catch (PlayerIsDeadException e)
+            {
+                throw e;
             }
             story[1] = "Oh no! The slime hit you";
         }
