@@ -61,6 +61,7 @@
         </Compile>
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
+        <Compile Include="WitchRoom.cs" />
         <EmbeddedResource Include="Form1.resx">
           <DependentUpon>Form1.cs</DependentUpon>
         </EmbeddedResource>
@@ -100,6 +101,7 @@
       <Content Include="resource\Dungeon.png" />
       <Content Include="resource\openChest.png" />
       <Content Include="resource\Slime.png" />
+      <Content Include="resource\Witch.png" />
     </ItemGroup>
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
