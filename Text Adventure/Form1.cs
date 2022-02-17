@@ -18,6 +18,7 @@ namespace Text_Adventure
         Bitmap pictureChest = new Bitmap("./../../resource/Chest.png");
         Bitmap pictureOpenChest = new Bitmap("./../../resource/openChest.png");
         Bitmap pictureSlime = new Bitmap("./../../resource/Slime.png");
+        Bitmap pictureWitch = new Bitmap("./../../resource/Witch.png");
         Bitmap pictureDungeon = new Bitmap("./../../resource/Dungeon.png");
 
         public Form1()
@@ -178,6 +179,10 @@ namespace Text_Adventure
                     pictureBox.Image = pictureChest;
                     story2.Text = "You've found a chest!";
                 }
+            }else if(r != null && r.GetType() == typeof(WitchRoom))
+            {
+                pictureBox.Image = pictureWitch;
+                story2.Text = $"You find a Witch, who offers you a health poition for {(r as WitchRoom).Price} gold";
             }
             else
             {
