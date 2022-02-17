@@ -6,8 +6,9 @@ public class ChestRoom : Room
 {
     public bool Open { get; set; }
 
-    public ChestRoom()
+    public ChestRoom(Character chara)
     {
+        this.chara = chara;
         choicepro = new string[]
         {
             "Open chest",
@@ -22,7 +23,6 @@ public class ChestRoom : Room
 
     public override string[] DoIt()
     {
-        Character chara = Form1.character;
         string[] story = new string[2];
         story[0] = "You open the chest";
         switch (r.Next(4))

@@ -6,7 +6,7 @@ public abstract class Room
 {
     protected string[] choicepro;
     protected string[] choiceContra;
-
+    protected Character chara;
     protected Random r = new Random();
 
     public string[] GetTexts()

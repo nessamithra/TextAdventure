@@ -8,8 +8,9 @@ public class EnemyRoom : Room
     public int MaxHP { get; set; }
     private int attack;
 
-    public EnemyRoom()
+    public EnemyRoom(Character chara)
     {
+        this.chara = chara;
         this.choicepro = new[]
         {
             "Attack!",
@@ -21,8 +22,8 @@ public class EnemyRoom : Room
             "Run Away",
             "Try to escape"
         };
-        int level = Form1.character.Level;
-        int upperBorder = Math.Max((Form1.character.Attack * 2), (Form1.character.Attack * level));
+        int level = chara.Level;
+        int upperBorder = Math.Max((chara.Attack * 2), (chara.Attack * level));
         MaxHP = r.Next(Form1.character.Attack-1, upperBorder);
         HP = MaxHP;
         attack = r.Next(level, level*2);
@@ -33,7 +34,6 @@ public class EnemyRoom : Room
      */
     public override string[] DoIt()
     {
-        Character chara = Form1.character;
         string[] story = new string[2];
         story[0] = $"You attack the slime and made {chara.Attack} damage";
         HP = (HP - chara.Attack < 0) ? 0 : (HP - chara.Attack);

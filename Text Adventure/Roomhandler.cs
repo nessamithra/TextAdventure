@@ -33,9 +33,9 @@ namespace Text_Adventure
             switch (roomnr)
             {
                 case (int)RoomNames.CHEST:
-                    return new ChestRoom();
+                    return new ChestRoom(Form1.character);
                 case (int)RoomNames.ENEMY:
-                    return new EnemyRoom();
+                    return new EnemyRoom(Form1.character);
                 case (int)RoomNames.WITCH:
                     return new WitchRoom();
                 default:
