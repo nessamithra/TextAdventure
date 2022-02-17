@@ -110,7 +110,7 @@
             // 
             // north_door
             // 
-            this.north_door.Location = new System.Drawing.Point(376, 126);
+            this.north_door.Location = new System.Drawing.Point(378, 143);
             this.north_door.Name = "north_door";
             this.north_door.Size = new System.Drawing.Size(67, 85);
             this.north_door.TabIndex = 2;
