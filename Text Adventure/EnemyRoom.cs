@@ -35,7 +35,7 @@ public class EnemyRoom : Room
     {
         Character chara = Form1.character;
         string[] story = new string[2];
-        story[0] = "You attack the slime!";
+        story[0] = $"You attack the slime and made {chara.Attack} damage";
         HP = (HP - chara.Attack < 0) ? 0 : (HP - chara.Attack);
         if (HP > 0)
         {
@@ -47,12 +47,13 @@ public class EnemyRoom : Room
             {
                 throw e;
             }
-            story[1] = "Oh no! The slime hit you";
+            story[1] = $"Oh no! The slime hit you. You've lost {attack} HP";
         }
         else
         {
-            story[1] = $"You killed the slime and got { MaxHP/2 } Xp";
+            story[1] = $"You killed the slime and got { MaxHP/2 } Xp and 1 gold";
             chara.Xp = chara.Xp + MaxHP/2;
+            chara.Gold++;
         }
         
         return story;
