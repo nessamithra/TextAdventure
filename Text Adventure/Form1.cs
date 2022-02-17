@@ -101,6 +101,7 @@ namespace Text_Adventure
                 {
                     finishEvent();
                 }
+
                 setText();
             }
             catch (PlayerIsDeadException exception)
@@ -144,6 +145,8 @@ namespace Text_Adventure
         {
             gold_value.Text = character.Gold.ToString();
             hp_value.Text = $"{character.HP.ToString()}/{character.MaxHp.ToString()}";
+            level_value.Text = character.Level.ToString();
+            xp_value.Text = $"{character.Xp.ToString()}/{(character.Level * 5).ToString()}";
             if (r != null && r.GetType() == typeof(EnemyRoom))
             {
                 enemy_hp_value.Text = $"{(r as EnemyRoom).HP.ToString()}/{(r as EnemyRoom).MaxHP.ToString()}";
@@ -180,6 +183,7 @@ namespace Text_Adventure
             {
                 pictureBox.Visible = false;
             }
+
             pictureBox.BackColor = Color.Transparent;
         }
 
