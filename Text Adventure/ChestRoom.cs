@@ -27,18 +27,18 @@ public class ChestRoom : Room
         {
             case 0:
             case 1:
-                // chara.Gold += chara.Level+2;
-                // story[1] = $"You found {chara.Level+2} Gold";
+                chara.Gold += chara.Level+2;
+                story[1] = $"You found {chara.Level+2} Gold";
                 break;
             case 2:
-                // chara.HP -= chara.Level;
+                chara.HP -= chara.Level;
                 // Todo: Add different story lines
-                // story[1] = $"You lost {chara.Level} life";
+                story[1] = $"You lost {chara.Level} life";
                 break;
             case 3:
-                // chara.HP += chara.Level;
+                chara.HP += chara.Level;
                 // Todo: Add different story lines 
-                // story[1] = $"You gain {chara.Level} life";
+                story[1] = $"You gain {chara.Level} life";
                 break;
             default:
                 break;

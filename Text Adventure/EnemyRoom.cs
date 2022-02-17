@@ -1,4 +1,6 @@
-﻿namespace Text_Adventure;
+﻿using System;
+
+namespace Text_Adventure;
 
 public class EnemyRoom : Room
 {
@@ -19,12 +21,11 @@ public class EnemyRoom : Room
             "Run Away",
             "Try to escape"
         };
-        // int level = Form1.character.Level;
-        // MaxHP = r.Next(Form1.character.Attack-1, Form1.character.Attack*level-1);
-        MaxHP = r.Next(1, 10);
+        int level = Form1.character.Level;
+        int upperBorder = Math.Max((Form1.character.Attack * 2), (Form1.character.Attack * level));
+        MaxHP = r.Next(Form1.character.Attack-1, upperBorder);
         HP = MaxHP;
-        // attack = r.Next(level, level*2);
-        attack = r.Next(1, 3);
+        attack = r.Next(level, level*2);
     }
     
     /*
@@ -48,8 +49,8 @@ public class EnemyRoom : Room
         }
         else
         {
-            story[1] = "You killed the slime";
-            chara.Xp += MaxHP/2;
+            story[1] = $"You killed the slime and got { MaxHP/2 } Xp";
+            chara.Xp = chara.Xp + MaxHP/2;
         }
         
         return story;
