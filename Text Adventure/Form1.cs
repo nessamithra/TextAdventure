@@ -67,6 +67,9 @@ namespace Text_Adventure
             string[] text = r.GetTexts();
             doit_button.Text = text[0];
             donot_button.Text = text[1];
+            string s = story2.Text;
+            story2.Text = text[2];
+            story1.Text = s;
 
             donot_button.Enabled = true;
             doit_button.Enabled = true;
@@ -166,7 +169,6 @@ namespace Text_Adventure
             if (r != null && r.GetType() == typeof(EnemyRoom))
             {
                 pictureBox.Image = pictureSlime;
-                story2.Text = "A slime appears!";
             }
             else if (r != null && r.GetType() == typeof(ChestRoom))
             {
@@ -178,12 +180,10 @@ namespace Text_Adventure
                 else
                 {
                     pictureBox.Image = pictureChest;
-                    story2.Text = "You've found a chest!";
                 }
             }else if(r != null && r.GetType() == typeof(WitchRoom))
             {
                 pictureBox.Image = pictureWitch;
-                story2.Text = $"You find a Witch, who offers you a health poition for {(r as WitchRoom).Price} gold.";
             }
             else
             {

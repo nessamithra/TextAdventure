@@ -15,17 +15,21 @@ public class EnemyRoom : Room
     public EnemyRoom(ref Character chara)
     {
         this.chara = chara;
-        this.choicepro = new[]
+        this.choiceProText = new[]
         {
             "Attack!",
             "Fight!",
             "Try to kill"
         };
-        this.choiceContra = new[]
+        this.choiceContraText = new[]
         {
             "Run Away",
             "Try to escape",
             "Spare his life"
+        };
+        this.appearText = new[]
+        {
+            "A slime appears!"
         };
         
         int level = chara.Level;
@@ -49,9 +53,9 @@ public class EnemyRoom : Room
         };
         killText = new[]
         {
-            $"You kill the slime and got { MaxHP/2 } Xp and 1 gold.",
-            $"You slaughter the slime and got { MaxHP/2 } Xp and 1 gold.",
-            $"The slime slowly dies in your arms. You got { MaxHP/2 } Xp and 1 gold."
+            $"You kill the slime and got { MaxHP/2 } XP and 1 gold.",
+            $"You slaughter the slime and got { MaxHP/2 } XP and 1 gold.",
+            $"The slime slowly dies in your arms. You got { MaxHP/2 } XP and 1 gold."
         };
         escapeText = new[]
         {

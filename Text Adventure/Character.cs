@@ -7,6 +7,23 @@ public class Character
     public int Gold { get; set; }
 
     private int hp;
+    private int xp;
+    public int MaxHp { get; set; }
+    public int Attack { get; set; }
+
+    private int level;
+    public int Level { get; set; }
+    
+    public Character()
+    {
+        Gold = 0;
+        MaxHp = 20;
+        HP = MaxHp;
+        Attack = 3;
+        Level = 1;
+        Xp = 0;
+    }
+    
     public int HP
     {
         get { return this.hp;}
@@ -28,13 +45,6 @@ public class Character
         }
     }
 
-    public int MaxHp { get; set; }
-    public int Attack { get; set; }
-
-    private int level;
-    public int Level { get; set; }
-    private int xp;
-
     public int Xp
     {
         get => xp;
@@ -55,14 +65,5 @@ public class Character
             }
         }
     }
-
-    public Character()
-    {
-        Gold = 0;
-        MaxHp = 20;
-        HP = MaxHp;
-        Attack = 3;
-        Level = 1;
-        Xp = 0;
-    }
+    
 }

@@ -14,24 +14,28 @@ public class WitchRoom : Room
     public int Price { get; set; }
     public int Efficiency { get; set; }
 
-    private Character chara;
-    
     public WitchRoom(ref Character chara)
     {
         this.chara = chara;
-        this.choicepro = new[]
+        this.choiceProText = new[]
         {
             "Take the deal",
             "Gladly give her your gold"
         };
-        this.choiceContra = new[]
+        this.choiceContraText = new[]
         {
             "Ignore her",
             "Refuse"
         };
         
+        
         Price = r.Next(Form1.character.Level, Form1.character.Level * 2);
         Efficiency = r.Next(Form1.character.Level, Form1.character.MaxHp / 2 + 1);
+        
+        this.appearText = new[]
+        {
+            $"You find a Witch, who offers you a health poition for {Price} gold."
+        };
         
         buyFail1Text = new[]
         {
@@ -58,15 +62,15 @@ public class WitchRoom : Room
         {
             $"The potion was very efficient.You regained { Efficiency } health.",
             $"You drink the potion and feel more lively then ever and regain { Efficiency } health.",
-            $"What fabulous potion it regained {Efficiency} hp of your health!",
+            $"What fabulous potion it regained {Efficiency} HP of your health!",
             $"Amazing! You seem to be lucky and regained {Efficiency} through the potion."
         };
         efficentText = new[]
         {
             $"The potion was efficient. You regain { Efficiency } health.",
-            $"Well, it is a potion... You regain {Efficiency} hp.",
-            $"Maybe this potion stayed too long in the shelf. You regain {Efficiency} hp.",
-            $"Not that tasty but at least it healed {Efficiency} hp."
+            $"Well, it is a potion... You regain {Efficiency} HP.",
+            $"Maybe this potion stayed too long in the shelf. You regain {Efficiency} HP.",
+            $"Not that tasty but at least it healed {Efficiency} HP."
         };
         notEfficentText = new[]
         {
