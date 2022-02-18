@@ -12,7 +12,7 @@ public class EnemyRoom : Room
     public int MaxHP { get; set; }
     private int attack;
 
-    public EnemyRoom(Character chara)
+    public EnemyRoom(ref Character chara)
     {
         this.chara = chara;
         this.choicepro = new[]

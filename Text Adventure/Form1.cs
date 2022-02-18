@@ -62,7 +62,7 @@ namespace Text_Adventure
             west_door.Visible = false;
             pictureBox.Visible = true;
 
-            r = roomhandler.getRoom();
+            r = roomhandler.getRoom(ref character);
             setPictures();
             string[] text = r.GetTexts();
             doit_button.Text = text[0];
@@ -183,7 +183,7 @@ namespace Text_Adventure
             }else if(r != null && r.GetType() == typeof(WitchRoom))
             {
                 pictureBox.Image = pictureWitch;
-                story2.Text = $"You find a Witch, who offers you a health poition for {(r as WitchRoom).Price} gold";
+                story2.Text = $"You find a Witch, who offers you a health poition for {(r as WitchRoom).Price} gold.";
             }
             else
             {

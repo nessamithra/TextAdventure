@@ -13,9 +13,12 @@ public class WitchRoom : Room
     private string[] rejectText;
     public int Price { get; set; }
     public int Efficiency { get; set; }
+
+    private Character chara;
     
-    public WitchRoom()
+    public WitchRoom(ref Character chara)
     {
+        this.chara = chara;
         this.choicepro = new[]
         {
             "Take the deal",
@@ -27,8 +30,8 @@ public class WitchRoom : Room
             "Refuse"
         };
         
-        Price = r.Next(Form1.character.Level, Form1.character.Level);
-        Efficiency = r.Next(Form1.character.Level, Form1.character.MaxHp / 3 + 1);
+        Price = r.Next(Form1.character.Level, Form1.character.Level * 2);
+        Efficiency = r.Next(Form1.character.Level, Form1.character.MaxHp / 2 + 1);
         
         buyFail1Text = new[]
         {
@@ -55,14 +58,14 @@ public class WitchRoom : Room
         {
             $"The potion was very efficient.You regained { Efficiency } health.",
             $"You drink the potion and feel more lively then ever and regain { Efficiency } health.",
-            $"What fabulous potion it regained {Efficiency} of your health!",
+            $"What fabulous potion it regained {Efficiency} hp of your health!",
             $"Amazing! You seem to be lucky and regained {Efficiency} through the potion."
         };
         efficentText = new[]
         {
             $"The potion was efficient. You regain { Efficiency } health.",
             $"Well, it is a potion... You regain {Efficiency} hp.",
-            $"Maybe this stayed too long in the shelf. You regain {Efficiency} hp.",
+            $"Maybe this potion stayed too long in the shelf. You regain {Efficiency} hp.",
             $"Not that tasty but at least it healed {Efficiency} hp."
         };
         notEfficentText = new[]
@@ -70,7 +73,7 @@ public class WitchRoom : Room
             $"The potion was not really efficient. You regained { Efficiency } health.",
             $"The god of luck seems to be busy you only regain {Efficiency} hp.",
             $"What junk did the witch sell you?! It could only regain {Efficiency} hp.",
-            $"This potion really was really not worth it... You regain {Efficiency} hp."
+            $"This potion was really not worth it... You regain {Efficiency} hp."
         };
         rejectText = new[]
         {
@@ -83,7 +86,6 @@ public class WitchRoom : Room
     
     public override string[] DoIt()
     {
-        Character chara = Form1.character;
         string[] story = new string[2];
         
         if (chara.Gold - Price < 0)
@@ -97,11 +99,11 @@ public class WitchRoom : Room
             chara.Gold -= Price;
             chara.HP += Efficiency;
         
-            if (Efficiency < chara.MaxHp / 6)
+            if (Efficiency < (chara.MaxHp / 4))
             {
                 story[1] = notEfficentText[r.Next(notEfficentText.Length)];
             }
-            else if(Efficiency < chara.MaxHp / 4)
+            else if(Efficiency < (chara.MaxHp / 3))
             {
                 story[1] = efficentText[r.Next(efficentText.Length)];
             }

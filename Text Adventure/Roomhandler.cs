@@ -17,7 +17,7 @@ namespace Text_Adventure
             r = new Random();
         }
 
-        public Room getRoom()
+        public Room getRoom(ref Character chara)
         {
             int temp = r.Next(100);
             int roomnr = 0;
@@ -33,11 +33,11 @@ namespace Text_Adventure
             switch (roomnr)
             {
                 case (int)RoomNames.CHEST:
-                    return new ChestRoom(Form1.character);
+                    return new ChestRoom(ref chara);
                 case (int)RoomNames.ENEMY:
-                    return new EnemyRoom(Form1.character);
+                    return new EnemyRoom(ref chara);
                 case (int)RoomNames.WITCH:
-                    return new WitchRoom();
+                    return new WitchRoom(ref chara);
                 default:
                     throw new Exception("Could not generate room");
             }

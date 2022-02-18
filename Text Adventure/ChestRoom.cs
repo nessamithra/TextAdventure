@@ -19,7 +19,7 @@ public class ChestRoom : Room
     private string[] gainLifeMessage;
     private string[] doNotMessage;
 
-    public ChestRoom(Character chara)
+    public ChestRoom(ref Character chara)
     {
         this.chara = chara;
         choicepro = new string[]
