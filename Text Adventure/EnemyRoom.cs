@@ -29,12 +29,14 @@ public class EnemyRoom : Room
         };
         this.appearText = new[]
         {
-            "A slime appears!"
+            "A slime appears!",
+            "You find a wobbling little creature looking at you with big eyes.",
+            "In the next room awaits you a slimy creature."
         };
         
         int level = chara.Level;
         int upperBorder = Math.Max((chara.Attack * 2), (chara.Attack * level));
-        MaxHP = r.Next(Form1.character.Attack-1, upperBorder);
+        MaxHP = r.Next(FormTextAdventure.character.Attack-1, upperBorder);
         HP = MaxHP;
         attack = r.Next(level, level*2);
         
@@ -53,9 +55,9 @@ public class EnemyRoom : Room
         };
         killText = new[]
         {
-            $"You kill the slime and got { MaxHP/2 } XP and 1 gold.",
-            $"You slaughter the slime and got { MaxHP/2 } XP and 1 gold.",
-            $"The slime slowly dies in your arms. You got { MaxHP/2 } XP and 1 gold."
+            $"You kill the slime and got { MaxHP/2 } XP and {(int)(MaxHP /5.0 + 1)} gold.",
+            $"You slaughter the slime and got { MaxHP/2 } XP and {(int)(MaxHP /5.0 + 1)} gold.",
+            $"The slime slowly dies in your arms. You got { MaxHP/2 } XP and {(int)(MaxHP /5.0 + 1)} gold."
         };
         escapeText = new[]
         {
@@ -90,14 +92,14 @@ public class EnemyRoom : Room
         {
             story[1] = killText[r.Next(killText.Length)];
             chara.Xp = chara.Xp + MaxHP/2;
-            chara.Gold++;
+            chara.Gold += (int)(MaxHP / 5.0 + 1);
         }
         
         return story;
     }
 
     /*
-     * Run away and leave room
+     * Leave room
      */
     public override string DoNot()
     {

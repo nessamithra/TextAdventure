@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace Text_Adventure
 {
-    public partial class Form1 : Form
+    public partial class FormTextAdventure : Form
     {
         public static Character character;
         public Roomhandler roomhandler;
@@ -21,34 +21,34 @@ namespace Text_Adventure
         Bitmap pictureWitch = new Bitmap("./../../resource/Witch.png");
         Bitmap pictureDungeon = new Bitmap("./../../resource/Dungeon.png");
 
-        public Form1()
+        public FormTextAdventure()
         {
             InitializeComponent();
             north_door.SendToBack();
             background.SendToBack();
-            background.Controls.Add(pictureBox);
+            background.Controls.Add(pictureBox);//To make picture transparent in front of background
             pictureBox.Visible = false;
             background.Image = pictureDungeon;
             character = new Character();
             roomhandler = new Roomhandler();
-            setText();
+            SetText();
         }
 
         private void west_door_Click(object sender, EventArgs e)
         {
-            story1.Text = "You are going west.";
+            story1.Text = "You go west.";
             GoThroughDoor();
         }
 
         private void north_door_Click(object sender, EventArgs e)
         {
-            story1.Text = "You are going north.";
+            story1.Text = "You go north.";
             GoThroughDoor();
         }
 
         private void east_door_Click(object sender, EventArgs e)
         {
-            story1.Text = "You are going east.";
+            story1.Text = "You go east.";
             GoThroughDoor();
         }
 
@@ -62,8 +62,8 @@ namespace Text_Adventure
             west_door.Visible = false;
             pictureBox.Visible = true;
 
-            r = roomhandler.getRoom(ref character);
-            setPictures();
+            r = roomhandler.GetRoom(ref character);
+            SetPictures();
             string[] text = r.GetTexts();
             doit_button.Text = text[0];
             donot_button.Text = text[1];
@@ -75,25 +75,25 @@ namespace Text_Adventure
             doit_button.Enabled = true;
             doit_button.Visible = true;
             donot_button.Visible = true;
-            setText();
+            SetText();
         }
 
-        private void donot_button_Click(object sender, EventArgs e)
+        private void DoNot_button_Click(object sender, EventArgs e)
         {
             try
             {
                 string story = r.DoNot();
                 story1.Text = story2.Text;
                 story2.Text = story;
-                finishEvent();
+                FinishEvent();
             }
             catch (PlayerIsDeadException exeption)
             {
-                Gameover();
+                GameOver();
             }
         }
 
-        private void doit_button_Click(object sender, EventArgs e)
+        private void DoIt_button_Click(object sender, EventArgs e)
         {
             try
             {
@@ -104,18 +104,18 @@ namespace Text_Adventure
                     || r.GetType().Equals(typeof(WitchRoom))
                     || (r.GetType().Equals(typeof(EnemyRoom)) && (r as EnemyRoom).HP <= 0))
                 {
-                    finishEvent();
+                    FinishEvent();
                 }
 
-                setText();
+                SetText();
             }
             catch (PlayerIsDeadException exception)
             {
-                Gameover();
+                GameOver();
             }
         }
 
-        private void finishEvent()
+        private void FinishEvent()
         {
             donot_button.Enabled = false;
             doit_button.Enabled = false;
@@ -142,11 +142,11 @@ namespace Text_Adventure
                 r = null;
             }
 
-            setPictures();
-            setText();
+            SetPictures();
+            SetText();
         }
 
-        private void setText()
+        private void SetText()
         {
             gold_value.Text = character.Gold.ToString();
             hp_value.Text = $"{character.HP.ToString()}/{character.MaxHp.ToString()}";
@@ -164,7 +164,7 @@ namespace Text_Adventure
             }
         }
 
-        private void setPictures()
+        private void SetPictures()
         {
             if (r != null && r.GetType() == typeof(EnemyRoom))
             {
@@ -193,11 +193,11 @@ namespace Text_Adventure
             pictureBox.BackColor = Color.Transparent;
         }
 
-        private void Gameover()
+        private void GameOver()
         {
             r = null;
-            setText();
-            setPictures();
+            SetText();
+            SetPictures();
             donot_button.Enabled = false;
             doit_button.Enabled = false;
             doit_button.Visible = false;
@@ -209,7 +209,7 @@ namespace Text_Adventure
         private void retry_Click(object sender, EventArgs e)
         {
             character = new Character();
-            setText();
+            SetText();
             east_door.Enabled = true;
             north_door.Enabled = true;
             west_door.Enabled = true;

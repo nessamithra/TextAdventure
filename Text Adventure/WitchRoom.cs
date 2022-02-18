@@ -29,12 +29,14 @@ public class WitchRoom : Room
         };
         
         
-        Price = r.Next(Form1.character.Level, Form1.character.Level * 2);
-        Efficiency = r.Next(Form1.character.Level, Form1.character.MaxHp / 2 + 1);
+        Price = r.Next(FormTextAdventure.character.Level, FormTextAdventure.character.Level * 2);
+        Efficiency = r.Next(FormTextAdventure.character.Level, FormTextAdventure.character.MaxHp / 2 + 1);
         
         this.appearText = new[]
         {
-            $"You find a Witch, who offers you a health poition for {Price} gold."
+            $"You find a Witch, who offers you a health potion for {Price} gold.",
+            $"In the next room awaits you a witch with the offer of one health potion for {Price} gold.",
+            $"You enter the room and see a witch with a potion and a note stating {Price} gold."
         };
         
         buyFail1Text = new[]
@@ -88,6 +90,9 @@ public class WitchRoom : Room
         };
     }
     
+    /*
+     * Try to buy potion
+     */
     public override string[] DoIt()
     {
         string[] story = new string[2];
@@ -120,6 +125,9 @@ public class WitchRoom : Room
         return story;
     }
 
+    /*
+     * Leave room
+     */
     public override string DoNot()
     {
         return rejectText[r.Next(rejectText.Length)];

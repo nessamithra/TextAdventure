@@ -31,7 +31,9 @@ public class ChestRoom : Room
         };
         this.appearText = new[]
         {
-            "You've found a chest!"
+            "You found a chest!",
+            "In the next room you find a out of place looking chest.",
+            "You stumble over a chest. Will you open it and see what's inside?"
         };
         openChestText = new[]
         {
@@ -70,6 +72,9 @@ public class ChestRoom : Room
         };
     }
 
+    /*
+     * Open chest
+     */
     public override string[] DoIt()
     {
         string[] story = new string[2];
@@ -106,6 +111,9 @@ public class ChestRoom : Room
         return story;
     }
 
+    /*
+     * Leave room
+     */
     public override string DoNot()
     {
         return doNotText[r.Next(doNotText.Length)];

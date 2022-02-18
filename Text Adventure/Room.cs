@@ -10,6 +10,9 @@ public abstract class Room
     protected Character chara;
     protected Random r = new Random();
 
+    /*
+     * Text for options and appearance of Room
+     */
     public string[] GetTexts()
     {
         return new string[] {choiceProText[r.Next(choiceProText.Length)], 

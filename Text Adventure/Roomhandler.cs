@@ -17,16 +17,16 @@ namespace Text_Adventure
             r = new Random();
         }
 
-        public Room getRoom(ref Character chara)
+        public Room GetRoom(ref Character chara)
         {
             int temp = r.Next(100);
             int roomnr = 0;
-            if (temp < 75)
+            if (temp < 65)
             {
                 roomnr = 1;
             }
 
-            if (temp > 80)
+            if (temp > 90)
             {
                 roomnr = 2;
             }
